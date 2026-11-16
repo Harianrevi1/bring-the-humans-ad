@@ -13,6 +13,16 @@
   A single self-contained file: no build step, no framework, no external assets.
   My referral code is x7g0n0hz and my referral link is https://make.fun/r/x7g0n0hz.
   That link is the href of the call-to-action and the invite pass on this page.
+
+  Design notes
+  - Tokens come from the make.fun press kit (palette, type, spacing, radii).
+  - Sizing uses rem throughout, so the layout follows the reader's font size.
+  - Light and dark palettes switch on prefers-color-scheme; the wordmark swaps
+    with them. Touch targets grow to 44px on coarse pointers.
+  - The invite pass is a dark ticket: code on top, a dashed perforation with
+    notches, then the link. It animates in once, unless motion is reduced.
+  - The three steps sit in one row on wide screens and stack below 900px.
+  - Selected text takes the accent colour so the brand shows even in a drag.
 -->
 <style>
   /* Press-kit tokens (make.fun/press, 2026-11-02): Light palette, type scale,
@@ -125,7 +135,8 @@
     }
   }
 
-  /* Header: wordmark left, one-line note right (hidden on small screens). */
+  /* Header: wordmark on the left, one-line note on the right. The note
+     hides on small screens so the wordmark keeps the full width. */
   .site-head {
     display: flex;
     align-items: center;
@@ -161,7 +172,8 @@
     .head-note { display: none; }
   }
 
-  /* Hero: pitch left, invite pass right; stacks on narrow screens. */
+  /* Hero: pitch on the left, invite pass on the right; the two columns
+     collapse into one stack on narrow screens, pass below the pitch. */
   .main { flex: 1; display: grid; align-content: center; }
 
   .hero {
@@ -252,7 +264,8 @@
     color: var(--secondary);
   }
 
-  /* Invite pass: dark ticket card with the code, a perforation, and the link. */
+  /* Invite pass: a dark ticket card. The code is the star; below the
+     perforation sits the link, underlined so it reads as tappable. */
   .pass {
     position: relative;
     width: 100%;
@@ -339,7 +352,8 @@
   .pass-link:hover { text-decoration-color: var(--pass-text); }
   .pass :focus-visible { outline-color: var(--pass-text); }
 
-  /* Three steps, one row on wide screens. */
+  /* Three steps: numbered cards in one row on wide screens, stacked below
+     900px. The number is a filled accent circle; the card is a soft surface. */
   .steps {
     display: grid;
     gap: var(--space-16);
