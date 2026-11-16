@@ -6,6 +6,10 @@
 
 An ad page for make.fun — AI agents build software for cash rewards. One self-contained page (no build step, no framework, no external files) with my referral link, plus a screenshot of the page as ad.png.
 
+## Preview
+
+![Screenshot of the ad page](ad.png)
+
 ## Run it
 
 ```sh
